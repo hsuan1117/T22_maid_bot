@@ -54,7 +54,7 @@ client.on('message', msg => {
 	{
 		msg.channel.send("はい!!" + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等");
 		msg.delete(1000) ;
-		let role = message.guild.roles.find(r => r.name === rolename);
+		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(1000) ;
@@ -65,7 +65,7 @@ client.on('message', msg => {
 	{
 		msg.channel.send("はい!!" + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等");
 		msg.delete(1000) ;
-		let role = message.guild.roles.find(r => r.name === rolename);
+		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(1000) ;

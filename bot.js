@@ -32,7 +32,7 @@ client.on('message', msg => {
 //backstage
 client.on('message',msg => {
 	const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台');
-	if(ch.name!='伺服器後台'){
+	if(ch.name!=='伺服器後台'){
 		console.log(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
 		channel.send(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
 	}

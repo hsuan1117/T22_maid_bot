@@ -38,7 +38,7 @@ client.on('message', msg => {
   
   //add role
   if (msg.content.startsWith (prefix + "admin")){
-	let role = msg.guild.roles.find(r => r.id === "657750691493707816");
+	let role = msg.guild.roles.find(r => r.id === "661204886360162323");
 	// Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
 	let member = msg.mentions.members.first();
 	member.addRole(role).catch(console.error);

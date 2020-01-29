@@ -17,6 +17,7 @@ client.on('ready', () => {
 
 //main responseText
 client.on('message', msg => {
+  const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台');
   if (msg.content.startsWith (prefix + "adduser") ) {
     msg.channel.send("はい!!" + msg.author.username + "\n正在呼叫管理員，請稍等");
   }
@@ -27,6 +28,7 @@ client.on('message', msg => {
     msg.channel.send("変態！！", {files:["./image/hentai.png"]});
   }
   console.log(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
+  channel.send(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
 });
 
 

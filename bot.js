@@ -52,25 +52,25 @@ client.on('message', msg => {
 	addperson = msg.member ;
 	if(rolename == "T22")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等"),then(d_msg => d_msg.delete(1000));
+		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(1000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb"),then(d_msg => d_msg.delete(2000)) ;
+		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(2000)) ;
 	}
 	else if (rolename == "T21")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等"),then(d_msg => d_msg.delete(1000));
+		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(1000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb"),then(d_msg => d_msg.delete(2000));
+		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(2000));
 	}
 	else
 	{
-		msg.channel.send("3O_OP 找不到身分組" + rolename + "，請輸入正確身分組"),then(d_msg => d_msg.delete(2000));
+		msg.channel.send("3O_OP 找不到身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(2000));
 		msg.delete(2000) ;
 	}
 	

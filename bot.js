@@ -31,8 +31,8 @@ client.on('message', msg => {
 
 //backstage
   if (msg.channel.id !== '672018541423099924') {
-	console.log(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
-	channel.send(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
+	console.log(msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id +"\n") ;
+	channel.send(msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id + "\n") ;
   }
 });
 

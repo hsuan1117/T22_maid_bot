@@ -35,26 +35,6 @@ client.on('message', msg => {
 	console.log("\n" + msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id) ;
 	channel.send("\n" + msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id) ; 
   }
-  
-  //add role
-  if (msg.content.startsWith (prefix + "admin")){
-	let role = msg.guild.roles.find(r => r.id === "661204886360162323");
-	// Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
-	let member = msg.mentions.members.first();
-	member.addRole(role).catch(console.error);
-  }
-  
-  if (msg.content.startsWith (prefix + "longislandadm")){
-	let perms = msg.member.permissions;
-
-	// Check if a member has a specific permission on the guild!
-	let has_admin = perms.has("ADMINISTRATOR");
-	msg.channel.send(has_admin);
-  }
-  
-  if (msg.content.startsWith (prefix + "checklongisland")){
-	msg.channel.send("/longislandadm");
-  }
 });
 
 

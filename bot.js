@@ -28,7 +28,7 @@ client.on('message', msg => {
     msg.channel.send("変態！！", {files:["./image/hentai.png"]});
   }
   console.log(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
-  channel.send(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
+
 });
 
 

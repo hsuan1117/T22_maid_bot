@@ -29,11 +29,11 @@ client.on('message', msg => {
     msg.channel.send("変態！！", {files:["./image/hentai.png"]});
   }
 
-  /*backstage
-  if(msg.channel!=='伺服器後台'){
+//backstage
+  if (msg.channel.id !== '672018541423099924') {
 	console.log(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
 	channel.send(msg.author.username + "-sent: [" + msg + "]\nuserID: " + msg.author.id) ;
-  }*/
+  }
 });
 
 

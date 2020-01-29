@@ -10,6 +10,19 @@ const auth = require('./auth.json');
 //prefix
 const prefix = "/" ;
 
+//sleep
+function Sleep(msc)
+{
+	var start=new Date().getTime();
+	for(var i=0 ; i<1e7 ; i++)
+	{
+		if((new Date().getTime()-start)>msc)
+		{
+			break ;
+		}
+	}
+}
+
 //startup
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -19,10 +32,6 @@ client.on('ready', () => {
 //main responseText 
 client.on('message', msg => {
   const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台');
-  
-  if (msg.content.startsWith (prefix + "adduser") ) {
-	msg.channel.send("はい!!" + msg.author.username + "\n正在呼叫管理員，請稍等");
-  }
   if (msg.content.startsWith (prefix + "dick")) {
     msg.channel.send("おにちゃんなら...やめるだいよ！:nose:");
   }
@@ -35,6 +44,41 @@ client.on('message', msg => {
 	console.log("\n" + msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id) ;
 	channel.send("\n" + msg.author.username + "-sent: [" + msg + "]  userID: " + msg.author.id) ; 
   }
+  
+//adduser
+  if (msg.content.startsWith (prefix + "adduser") ) {
+	msgsplit = msg.content.split(" ",3) ;
+	rolename = msgsplit[1] ;
+	addperson = msg.member ;
+	if(rolename == "T22")
+	{
+		msg.channel.send("はい!!" + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等");
+		msg.delete(1000) ;
+		let role = message.guild.roles.find(r => r.name === rolename);
+		let member = addperson;
+		member.addRole(role).catch(console.error);
+		Sleep(1000) ;
+		msg.channel.send("完畢!!" + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb");
+		msg.delete(1000) ;
+	}
+	else if (rolename == "T21")
+	{
+		msg.channel.send("はい!!" + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等");
+		msg.delete(1000) ;
+		let role = message.guild.roles.find(r => r.name === rolename);
+		let member = addperson;
+		member.addRole(role).catch(console.error);
+		Sleep(1000) ;
+		msg.channel.send("完畢!!" + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb");
+	}
+	else
+	{
+		msg.channel.send("3O_OP 找不到身分組" + rolename + "，請輸入正確身分組");
+		msg.delete(1000) ;
+	}
+	
+  }
+  
 });
 
 

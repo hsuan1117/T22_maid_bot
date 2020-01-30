@@ -118,6 +118,13 @@ client.on('message', msg => {
 	
   }
   
+//limit time message
+  if(msg.content.startsWith(prefix+"limited")){
+		msgsplit = msg.content.split(" ",2) ;
+		var limitedtime = msgsplit[1]*1000 ;
+		msg.delete(limitedtime) ;
+  }
+  
 });
 
 

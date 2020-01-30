@@ -52,11 +52,14 @@ client.on('message', msg => {
   
 //adduser
   if (msg.content.startsWith (prefix + "adduser") ) {
+	mention=msg.mentions.users.first() ;
 	msgsplit = msg.content.split(" ",3) ;
 	rolename = msgsplit[1] ;
 	addperson = msg.member ;
+	if(mention != null){addperson=msg.guild.member(mention) ;}
 	if(rolename == "T22")
 	{
+		mention=msg.mentions.users.first() ;
 		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
@@ -67,6 +70,7 @@ client.on('message', msg => {
 	}
 	else if (rolename == "T21")
 	{
+		mention=msg.mentions.users.first() ;
 		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
@@ -87,6 +91,7 @@ client.on('message', msg => {
 	}
 	else if (rolename == "teacher")
 	{
+		mention=msg.mentions.users.first() ;
 		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;

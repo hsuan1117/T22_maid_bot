@@ -53,10 +53,11 @@ client.on('message', msg => {
 //adduser
   if (msg.content.startsWith (prefix + "adduser") ) {
 	mention=msg.mentions.users.first() ;
+	addperson = msg.member ;
 	if(mention != null){addperson=msg.guild.member(mention) ;}
 	msgsplit = msg.content.split(" ",2) ;
 	rolename = msgsplit[1] ;
-	addperson = msg.member ;
+
 	if(rolename == "T22")
 	{
 		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));

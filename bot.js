@@ -16,7 +16,7 @@ function Sleep(msc)
 	var start=new Date().getTime();
 	for(var i=0 ; i<1e7 ; i++)
 	{
-		if((new Date().getTime()-start)>msc)
+		if((new Date().getTime()-start)> msc)
 		{
 			break ;
 		}
@@ -63,7 +63,7 @@ client.on('message', msg => {
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
 		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
-		msgEdit(msg,"   [已添加至身分組"+rolename+"]")
+		msg.react('☑️');
 	}
 	else if (rolename == "T21")
 	{
@@ -73,7 +73,7 @@ client.on('message', msg => {
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
 		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
-		msgEdit(msg,"   [已添加至身分組"+rolename+"]")
+		msg.react('☑️');		
 	}
 	else if (rolename == "T20")
 	{
@@ -83,7 +83,7 @@ client.on('message', msg => {
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
 		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
-		msgEdit(msg,"   [已添加至身分組"+rolename+"]")
+		msg.react('☑️');
 	}
 	else if (rolename == "teacher")
 	{
@@ -93,7 +93,7 @@ client.on('message', msg => {
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
 		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
-		msgEdit(msg,"   [已添加至身分組"+rolename+"]")
+		msg.react('☑️');
 	}
 	else if (rolename == "testrole")
 	{
@@ -103,11 +103,13 @@ client.on('message', msg => {
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
 		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
-		msgEdit(msg,"   [已添加至身分組"+rolename+"]")
+		msg.react('☑️');
+		msg.delete(3000) ;
 	}
 	else
 	{
 		msg.channel.send("3O_OP 找不到身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(3000));
+		msg.react('⚠️');
 		msg.delete(3000) ;
 	}
 	

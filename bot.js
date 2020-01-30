@@ -60,52 +60,52 @@ client.on('message', msg => {
 
 	if(rolename == "T22")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
+		msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
+		msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
 		msg.react('☑️');
 	}
 	else if (rolename == "T21")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
+		msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
+		msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
 		msg.react('☑️');		
 	}
 	else if (rolename == "T20")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
+		msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
+		msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
 		msg.react('☑️');
 	}
 	else if (rolename == "teacher")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
+		msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
+		msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
 		msg.react('☑️');
 	}
 	else if (rolename == "testrole")
 	{
-		msg.channel.send("はい!! " + msg.author.username + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(2000));
+		msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 		let role = msg.guild.roles.find(r => r.name === rolename);
 		let member = addperson;
 		member.addRole(role).catch(console.error);
 		Sleep(2000) ;
-		msg.channel.send("完畢!! " + msg.author.username + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
+		msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000));
 		msg.react('☑️');
 		msg.delete(3000) ;
 	}

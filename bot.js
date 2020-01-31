@@ -109,4 +109,4 @@ client.on('message', msg => {
 	});
 
 //login using the bot's token 
-	client.login(auth.token);
+	client.login(auth.token); 

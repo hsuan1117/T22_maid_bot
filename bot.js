@@ -23,22 +23,6 @@ function Sleep(msc)
 	}
 }
 
-//message edit 
-function msgEdit (msg, text){
-	msg.edit(text)
-}
-
-//adduser
-function addUser (addperson,rolename){
-	msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
-	let role = msg.guild.roles.find(r => r.name === rolename);
-	let member = addperson;
-	member.addRole(role).catch(console.error);
-	Sleep(2000) ;
-	msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
-	msg.react('☑️');
-}
-
 //startup
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -90,6 +74,24 @@ client.on('message', msg => {
 		var limitedtime = msgsplit[1]*1000 ;
 		msg.delete(limitedtime) ;
   }
+  
+  
+  
+  
+	//message edit 
+	function msgEdit (msg, text){
+	msg.edit(text)
+	}
+	//adduser
+	function addUser (addperson,rolename){
+	msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
+	let role = msg.guild.roles.find(r => r.name === rolename);
+	let member = addperson;
+	member.addRole(role).catch(console.error);
+	Sleep(2000) ;
+	msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
+	msg.react('☑️');
+	}
   
 });
 

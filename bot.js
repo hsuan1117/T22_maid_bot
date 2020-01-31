@@ -10,18 +10,7 @@ const auth = require('./auth.json');
 //prefix
 const prefix = "/" ;
 
-//sleep
-function Sleep(msc)
-{
-	var start=new Date().getTime();
-	for(var i=0 ; i<1e7 ; i++)
-	{
-		if((new Date().getTime()-start)> msc)
-		{
-			break ;
-		}
-	}
-}
+
 
 //startup
 client.on('ready', () => {
@@ -59,7 +48,7 @@ client.on('message', msg => {
 		case "teacher": addUser(addperson,rolename) ;
 		case "testrole": addUser(addperson,rolename) ;
 	}
-	if(rolename!="T22"||rolename!="T21"||rolename!="T20"||rolename!="teacher"||rolename!="testrole")
+	if(rolename!="T22"&&rolename!="T21"&&rolename!="T20"&&rolename!="teacher"&&rolename!="testrole")
 	{
 		msg.channel.send("3O_OP　ＥＲＲＯＲ４０４\n找不身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(3000));
 		msg.react('⚠️');
@@ -91,6 +80,18 @@ client.on('message', msg => {
 	Sleep(2000) ;
 	msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
 	msg.react('☑️');
+	}
+	//sleep
+	function Sleep(msc)
+	{
+	var start=new Date().getTime();
+	for(var i=0 ; i<1e7 ; i++)
+	{
+		if((new Date().getTime()-start)> msc)
+		{
+			break ;
+		}
+	}
 	}
   
 });

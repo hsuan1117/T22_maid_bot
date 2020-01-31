@@ -17,7 +17,7 @@
 
 //main responseText 
 client.on('message', msg => {
-  const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台');
+  const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台'); 
   if (msg.content.startsWith (prefix + "dick")) {
     msg.channel.send("おにちゃんなら...やめるだいよ！:nose:");
   }

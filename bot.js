@@ -42,11 +42,11 @@ client.on('message', msg => {
 	msgsplit = msg.content.split(" ",2) ;
 	rolename = msgsplit[1] ;
 	switch(rolename){
-		case "T22": addUser(addperson,rolename) ;
-		case "T21": addUser(addperson,rolename) ;
-		case "T20": addUser(addperson,rolename) ;
-		case "teacher": addUser(addperson,rolename) ;
-		case "testrole": addUser(addperson,rolename) ;
+		case "T22": addUser(addperson,rolename) ;break ;
+		case "T21": addUser(addperson,rolename) ;break ;
+		case "T20": addUser(addperson,rolename) ;break ;
+		case "teacher": addUser(addperson,rolename) ;break ;
+		case "testrole": addUser(addperson,rolename) ;break ;
 	}
 	if(rolename!="T22"&&rolename!="T21"&&rolename!="T20"&&rolename!="teacher"&&rolename!="testrole")
 	{

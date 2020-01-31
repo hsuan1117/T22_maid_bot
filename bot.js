@@ -75,7 +75,7 @@ client.on('message', msg => {
 		case teacher: addUser(addperson,rolename) ;
 		case testrole: addUser(addperson,rolename) ;
 	}
-	if(rolename!="T22"||rolename!="T21"rolename!="T20"||rolename!="teacher"||rolename!="testrole")
+	if(rolename!="T22"||rolename!="T21"||rolename!="T20"||rolename!="teacher"||rolename!="testrole")
 	{
 		msg.channel.send("3O_OP　ＥＲＲＯＲ４０４\n找不身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(3000));
 		msg.react('⚠️');

@@ -2,21 +2,18 @@
 //T22 server use
 
 //setup
-const Discord = require('discord.js');
-var client = new Discord.Client();
-const auth = require('./auth.json');
-
+	const Discord = require('discord.js');
+	var client = new Discord.Client();
+	const auth = require('./auth.json');
 
 //prefix
-const prefix = "/" ;
-
-
+	const prefix = "/" ;
 
 //startup
-client.on('ready', () => {
+	client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setActivity("Use /help for \"Help\""); //set status 
-});
+	});
 
 //main responseText 
 client.on('message', msg => {
@@ -66,12 +63,12 @@ client.on('message', msg => {
   
   
   
-  
-	//message edit 
+/*functions------------------------------------------------------------------------------------------------------------------------------------------*/
+//message edit 
 	function msgEdit (msg, text){
 	msg.edit(text)
 	}
-	//adduser
+//adduser
 	function addUser (addperson,rolename){
 	msg.channel.send("はい!! " + addperson + "\n正在增加大人您至身分組" + rolename + "，請稍等").then(d_msg => d_msg.delete(1000));
 	let role = msg.guild.roles.find(r => r.name === rolename);
@@ -81,7 +78,7 @@ client.on('message', msg => {
 	msg.channel.send("完畢!! " + addperson + "\n已將大人您新增至身分組" + rolename + " OwOb").then(d_msg => d_msg.delete(3000)) ;
 	msg.react('☑️');
 	}
-	//sleep
+//sleep
 	function Sleep(msc)
 	{
 	var start=new Date().getTime();
@@ -93,21 +90,21 @@ client.on('message', msg => {
 		}
 	}
 	}
-  
+/*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 });
 
 
 /* Create an event listener for new guild members
    the welcome bot main code */
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === '新進人員');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  console.log("${member} added into server") ;
-  channel.send(`歡迎來到T22的Discord伺服, ${member}\n\`\`\`md\n#貼心提醒\n[進入伺服要做的][請先查看以下頻道]\n1. <#info>\n2. <#注意事項>\n就醬掰\`\`\``);
-});
+	client.on('guildMemberAdd', member => {
+// Send the message to a designated channel on a server:
+	const channel = member.guild.channels.find(ch => ch.name === '新進人員');
+// Do nothing if the channel wasn't found on this server
+	if (!channel) return;
+// Send the message, mentioning the member
+	console.log("${member} added into server") ;
+	channel.send(`歡迎來到T22的Discord伺服, ${member}\n\`\`\`md\n#貼心提醒\n[進入伺服要做的][請先查看以下頻道]\n1. <#info>\n2. <#注意事項>\n就醬掰\`\`\``);
+	});
 
 //login using the bot's token 
-client.login(auth.token);
+	client.login(auth.token);

@@ -60,6 +60,8 @@ client.on('message', msg => {
 		var limitedtime = msgsplit[1]*1000 ;
 		msg.delete(limitedtime) ;
   }
+
+//
   
   
   

@@ -61,7 +61,7 @@ client.on('message', msg => {
 		msg.delete(limitedtime) ;
   }
 //random msg
-  if(msg.includes("早安")||msg.includes("喔嗨喲")||msg.includes("goodmorning")||msg.includes("Goodmorning")){
+  if(msg.includes ("早安")){
 		var max=5,min=1 ;
 		var rnd = Randomize(max,min) ;
 		switch(rnd){

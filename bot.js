@@ -65,11 +65,11 @@ client.on('message', msg => {
 		var max=5,min=1 ;
 		var rnd = Randomize(max,min) ;
 		switch(rnd){
-			case 1:msg.channel.send("はい!!") ;
-			case 2:msg.channel.send("morning!!") ;
-			case 3:msg.channel.send("O3Ob") ;
-			case 4:msg.channel.send("O_OP") ;
-			case 5:msg.channel.send("おはいよう!!") ;
+			case 1:msg.channel.send("はい!!") ;break ;
+			case 2:msg.channel.send("morning!!") ;break ;
+			case 3:msg.channel.send("O3Ob") ;break ;
+			case 4:msg.channel.send("O_OP") ;break ;
+			case 5:msg.channel.send("おはいよう!!") ;break ;
 		}
   }
   

@@ -60,8 +60,18 @@ client.on('message', msg => {
 		var limitedtime = msgsplit[1]*1000 ;
 		msg.delete(limitedtime) ;
   }
-
-//
+//random msg
+  if(msg.includes("早安"||"喔嗨喲"||"goodmorning"||"Goodmorning")){
+		var max=5,min=1 ;
+		var rnd = Randomize(max,min) ;
+		switch(rnd){
+			case 1:msg.channel.send("はい!!") ;
+			case 2:msg.channel.send("morning!!") ;
+			case 3:msg.channel.send("O3Ob") ;
+			case 4:msg.channel.send("O_OP") ;
+			case 5:msg.channel.send("おはいよう!!") ;
+		}
+  }
   
   
   
@@ -91,6 +101,11 @@ client.on('message', msg => {
 			break ;
 		}
 	}
+	}
+//random
+	function Randomize(max,min){
+		var rnd = Math.floor(Math.random()*max)+min ;
+		return rnd ;
 	}
 /*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 });

@@ -1,14 +1,10 @@
 {
-  "name": "T22_maid",
+  "name": "T22_maid_bot",
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
-  "dependencies": {
-    "discord.js": "^11.5.1"
-  },
-  "devDependencies": {},
   "scripts": {
-	"start" : "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/NeoDoggy/T22_maid_bot/issues"
   },
-  "homepage": "https://github.com/NeoDoggy/T22_maid_bot#readme"
+  "homepage": "https://github.com/NeoDoggy/T22_maid_bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
 }

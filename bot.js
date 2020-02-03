@@ -21,7 +21,7 @@ client.on('message', msg => {
   if (msg.content.startsWith (prefix + "dick")) {
     msg.channel.send("おにちゃんなら...やめるだいよ！:nose:");
   }
-  if (msg.content.startsWith (prefix + "hentai"&&channel.id=="662621474162606080")) {
+  if (msg.content.startsWith (prefix + "hentai"&&msg.channel.id=="662621474162606080")) {
     msg.channel.send("変態！！", {files:["./image/hentai.png"]});
   }
 

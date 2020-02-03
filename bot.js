@@ -25,6 +25,9 @@ client.on('message', msg => {
 	  if(msg.channel.id==='662621474162606080'){
 		msg.channel.send("変態！！", {files:["./image/hentai.png"]});
 	  }
+	  else{
+		  msg.reply("你這個大變態，我要報警\n\(此指令只適用於18+頻道\)");
+	  }
   }
 
 //backstage

@@ -83,7 +83,7 @@ client.on('message', msg => {
 		  helptask=msg.content.split(" ",2) ;
 		  helpcmd=helptask[1] ;
 		  switch(helpcmd){
-			  case "":msg.reply("這裡有所有主人您可以對我下達的指令\n```md\n[/help][開啟這個表單]\n[/adduser][加入身分組]只適用於<#申請>頻道\n[/limited][發送一則限時訊息]\n[/hentai][傳送一張隨機車圖]只適用於<#申請>頻道\n#更多訊息請打/help {指令名稱}\n```").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;
+			  case null:msg.reply("這裡有所有主人您可以對我下達的指令\n```md\n[/help][開啟這個表單]\n[/adduser][加入身分組]只適用於<#申請>頻道\n[/limited][發送一則限時訊息]\n[/hentai][傳送一張隨機車圖]只適用於<#申請>頻道\n#更多訊息請打/help {指令名稱}\n```").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;
 			  case "adduser":msg.reply("還敢問啊冰鳥\n在#info頻道都有說啦！自己去看 O~~w~~OP").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;
 			  case "limited":msg.reply("limited指令很神奇ww，他可以在設定的時間後自動刪除訊息，無須手動RR，訊息模板如下\n```md\n/linited <秒數>\n```").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;
 			  case "hentai":msg.reply("明明自己就會，変態先生").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;

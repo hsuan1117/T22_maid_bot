@@ -92,7 +92,7 @@ client.on('message', msg => {
 				case "hentai":msg.reply("明明自己就會，変態先生").then(d_msg => d_msg.delete(5000)); msg.delete(5000); break;
 			}
 		  } 
-	  }
+	  } 
   
   
   

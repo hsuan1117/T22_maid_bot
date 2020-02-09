@@ -23,7 +23,24 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith (prefix + "hentai")) {
 	  if(msg.channel.id==='662621474162606080'){
-		msg.channel.send("変態！！", {files:["./image/hentai.png"]});
+		var max=13,min=1 ;
+		var random=Randomize(max,min);
+		switch(random){
+			case 1:msg.channel.send("変態！！", {files:["./image/1.jpg"]});break;
+			case 2:msg.channel.send("変態！！", {files:["./image/2.png"]});break;
+			case 3:msg.channel.send("変態！！", {files:["./image/3.jpg"]});break;
+			case 4:msg.channel.send("変態！！", {files:["./image/4.jpg"]});break;
+			case 5:msg.channel.send("変態！！", {files:["./image/5.jpg"]});break;
+			case 6:msg.channel.send("変態！！", {files:["./image/6.png"]});break;
+			case 7:msg.channel.send("変態！！", {files:["./image/7.png"]});break;
+			case 8:msg.channel.send("変態！！", {files:["./image/8.jpg"]});break;
+			case 9:msg.channel.send("変態！！", {files:["./image/9.jpg"]});break;
+			case 10:msg.channel.send("変態！！", {files:["./image/10.jpg"]});break;
+			case 11:msg.channel.send("変態！！", {files:["./image/11.jpg"]});break;
+			case 12:msg.channel.send("変態！！", {files:["./image/12.jpg"]});break;
+			case 13:msg.channel.send("変態！！", {files:["./image/13.jpg"]});break;
+			case 14:msg.channel.send("変態！！", {files:["./image/14.png"]});break;
+		}
 	  }
 	  else{
 		  msg.reply("你這個大變態，我要報警\n\(此指令只適用於18+頻道\)");

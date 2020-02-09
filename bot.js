@@ -77,6 +77,7 @@ client.on('message', msg => {
 	}
 	else{
 		msg.react('⚠️');
+		msg.delete(3000) ;
 		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
   }
@@ -90,6 +91,7 @@ client.on('message', msg => {
 	}
 	else{
 		msg.react('⚠️');
+		msg.delete(3000) ;
 		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
 

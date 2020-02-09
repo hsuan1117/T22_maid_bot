@@ -60,20 +60,39 @@ client.on('message', msg => {
 	if(mention != null){addperson=msg.guild.member(mention) ;}
 	msgsplit = msg.content.split(" ",2) ;
 	rolename = msgsplit[1] ;
-	switch(rolename){
-		case "T22": addUser(addperson,rolename) ;break ;
-		case "T21": addUser(addperson,rolename) ;break ;
-		case "T20": addUser(addperson,rolename) ;break ;
-		case "teacher": addUser(addperson,rolename) ;break ;
-		case "testrole": addUser(addperson,rolename) ;break ;
+	if(msg.channel.id ==="661237842978144311"){
+		switch(rolename){
+			case "T22": addUser(addperson,rolename) ;break ;
+			case "T21": addUser(addperson,rolename) ;break ;
+			case "T20": addUser(addperson,rolename) ;break ;
+			case "teacher": addUser(addperson,rolename) ;break ;
+			case "testrole": addUser(addperson,rolename) ;break ;
+		}
+		if(rolename!="T22"&&rolename!="T21"&&rolename!="T20"&&rolename!="teacher"&&rolename!="testrole")
+		{
+			msg.channel.send("3O_OP　ＥＲＲＯＲ４０４\n找不身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(3000));
+			msg.react('⚠️');
+			msg.delete(3000) ;
+		}
 	}
-	if(rolename!="T22"&&rolename!="T21"&&rolename!="T20"&&rolename!="teacher"&&rolename!="testrole")
-	{
-		msg.channel.send("3O_OP　ＥＲＲＯＲ４０４\n找不身分組" + rolename + "，請輸入正確身分組").then(d_msg => d_msg.delete(3000));
+	else{
 		msg.react('⚠️');
-		msg.delete(3000) ;
+		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
-	
+  }
+//beHentai
+  if(msg.content.startsWith(prefix+"beHentai")){
+	mention=msg.mentions.users.first() ;
+	addperson = msg.member ;
+	if(mention != null){addperson=msg.guild.member(mention) ;}
+	if(msg.channel.id==="676117834581147700"){
+		addUser(addperson,"hentai") ;
+	}
+	else{
+		msg.react('⚠️');
+		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
+	}
+
   }
   
 //limit time message

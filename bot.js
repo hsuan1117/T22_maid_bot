@@ -22,7 +22,7 @@ client.on('message', msg => {
     msg.channel.send("おにちゃんなら...やめるだいよ！:nose:");
   }
   if (msg.content.startsWith (prefix + "hentai")) {
-	  if(msg.channel.id==='662621474162606080'){
+	  if(msg.channel.id==='676116802996273156'){
 		var max=13,min=1 ;
 		var random=Randomize(max,min);
 		switch(random){

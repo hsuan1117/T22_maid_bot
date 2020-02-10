@@ -2,7 +2,7 @@
 //T22 server use
 
 //setup
-	const Discord = require('discord.js');
+	const {Discord,Client,RichEmbed} = require('discord.js');
 	var client = new Discord.Client();
 	const auth = require('./auth.json');
 

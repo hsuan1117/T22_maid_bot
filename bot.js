@@ -190,20 +190,12 @@ client.on('message', msg => {
 
 //beHentai
 	client.on('messageReactionAdd',(reaction,user)=>{
-		if(user.bot){
+		if(user.bot)
 			return ;
-		}
-		let rolename=reaction.emoji.name;
-		if(rolename =="underage"){
-			let member = reaction.message.guild.members.find(member=>member.id===user.id);
-			addUser(member,"hentai") ;
-		}
-		//adduser
-		function addUser (addperson,rolename){
-			let role = msg.guild.roles.find(r => r.name === rolename);
-			let member = addperson;
-			member.addRole(role).catch(console.error);
-		}
+		var rolename = reaction.emoji.name ;
+		var role = reaction.message.guild.roles.find(role=>role.name.toLowerCase()===rolename.toLowerCase()) ;
+		var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+		member.addRole(role.id).catch(err=>console.error) ;
 	}) 
 
 

@@ -194,7 +194,7 @@ client.on('message', msg => {
 			return ;
 		}
 		let rolename=reaction.emoji.name;
-		if(rolename==="underage"){
+		if(rolename =="underage"){
 			let member = reaction.message.guild.members.find(member=>member.id===user.id);
 			addUser(member,"hentai") ;
 		}

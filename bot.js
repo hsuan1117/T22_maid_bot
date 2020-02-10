@@ -196,9 +196,11 @@ client.on('message', msg => {
 		if(rolename==="🔞"){
 			var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 			member.addRole("676117026271395846").catch(err=>console.error) ;
+			reaction.remove(member) ;
 		}
 		if(member.roles.has("676117026271395846")){
 			member.removeRole("676117026271395846").catch(err=>console.error);
+			reaction.remove(member) ;
 		}
 		
 	}) 

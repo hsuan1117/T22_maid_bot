@@ -86,8 +86,8 @@ client.on('message', msg => {
 	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
 		const embed = new RichEmbed();
 		embed.setTitle("変態に画像で");
-		embed.setColor("PINK");
-		embed.setDescription("18禁區🔞\n點擊下方按鈕來\"進入\"");
+		embed.setColor("BLUE");
+		embed.setDescription("18禁區 🔞\n點擊下方按鈕來\"進入\"\n再點一次來取消訂閱！");
 		msg.channel.send(embed) ;
 		msg.delete(0);
 	  }

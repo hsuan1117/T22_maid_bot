@@ -14,7 +14,7 @@
     console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setActivity("Use /help for \"Help\""); //set status 
 	});
-  
+
 //main responseText 
 client.on('message', msg => {
   const channel = msg.guild.channels.find(ch => ch.name === '伺服器後台'); 

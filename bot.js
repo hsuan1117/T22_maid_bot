@@ -82,8 +82,25 @@ client.on('message', msg => {
 		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
   }
-//beHentai
-  if(msg.content.startsWith(prefix+"beHentai")){
+//beHentaiMsg
+	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
+		const embed = new RichEmbed();
+		embed.setTitle("変態が画像で");
+		embed.description("18禁區🔞\n點擊下方按鈕來\"進入\"");
+		msg.channel.send(embed) ;
+		msg.delete(0);
+	  }
+	  if(msg.author.bot){
+		  if(msg.embeds){
+			  const embedMsg = msg.embeds.find(msg => msg.title === "変態が画像で")
+			  if(embedMsg==="変態が画像で"){
+					embedMsg.message.react("🔞");
+			  }
+		  }
+	  }
+
+
+/*if(msg.content.startsWith(prefix+"beHentai")){
 	mention=msg.mentions.users.first() ;
 	addperson = msg.member ;
 	if(mention != null){addperson=msg.guild.member(mention) ;}
@@ -96,7 +113,7 @@ client.on('message', msg => {
 		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
 
-  }
+  }*/
   
 //limit time message
   if(msg.content.startsWith(prefix+"limited")){

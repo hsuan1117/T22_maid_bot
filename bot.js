@@ -193,12 +193,11 @@ client.on('message', msg => {
 		if(user.bot)
 			return ;
 		var rolename = reaction.emoji.name ;
-		console.log(rolename) ;
-		/*if(rolename===""){
-
+		if(rolename==="🔞"){
+			var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+			member.addRole("676117026271395846").catch(err=>console.error) ;
 		}
-		var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
-		member.addRole(role.id).catch(err=>console.error) ;*/
+		
 	}) 
 
 

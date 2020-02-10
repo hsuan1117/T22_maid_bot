@@ -86,6 +86,7 @@ client.on('message', msg => {
 	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
 		const embed = new RichEmbed();
 		embed.setTitle("変態が画像で");
+		embed.setColor("CYAN");
 		embed.setDescription("18禁區🔞\n點擊下方按鈕來\"進入\"");
 		msg.channel.send(embed) ;
 		msg.delete(0);
@@ -186,6 +187,21 @@ client.on('message', msg => {
 	}
 /*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 });
+
+//beHentai
+	client.on('messageReactionAdd',(reaction,user)=>{
+		if(user.bot){
+			return ;
+		}
+		else{
+			var rolename=reaction.emoji.name;
+			if(rolename==="underage"){
+				var role=reaction.message.guild.find(role => role.name.toLoweCase() === "hentai") ;
+				var member = reaction.message.guild.members.find(member=>member.id===user.id);
+				member.addRole(role.id).catch(err=>console.error) ;
+			}
+		}
+	})
 
 
 /* Create an event listener for new guild members

@@ -204,7 +204,7 @@ client.on('message', msg => {
 			let member = addperson;
 			member.addRole(role).catch(console.error);
 		}
-	})
+	}) 
 
 
 /* Create an event listener for new guild members

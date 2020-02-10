@@ -193,13 +193,16 @@ client.on('message', msg => {
 		if(user.bot){
 			return ;
 		}
-		else{
-			var rolename=reaction.emoji.name;
-			if(rolename==="underage"){
-				var role=reaction.message.guild.find(role => role.name.toLoweCase() === "hentai") ;
-				var member = reaction.message.guild.members.find(member=>member.id===user.id);
-				member.addRole(role.id).catch(err=>console.error) ;
-			}
+		var rolename=reaction.emoji.name;
+		if(rolename==="underage"){
+			var member = reaction.message.guild.members.find(member=>member.id===user.id);
+			addUser(member,"hentai") ;
+		}
+		//adduser
+		function addUser (addperson,rolename){
+			let role = msg.guild.roles.find(r => r.name === rolename);
+			let member = addperson;
+			member.addRole(role).catch(console.error);
 		}
 	})
 

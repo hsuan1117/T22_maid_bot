@@ -93,7 +93,7 @@ client.on('message', msg => {
 	  }
 	  if(msg.author.bot){
 		  if(msg.embeds){
-			  const embedMsg = msg.embeds.find(msg => msg.title === "変態が画像で")
+			  const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
 			  if(embedMsg){
 					embedMsg.message.react("🔞");
 			  }

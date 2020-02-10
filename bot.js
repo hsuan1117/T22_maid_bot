@@ -86,7 +86,7 @@ client.on('message', msg => {
 	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
 		const embed = new RichEmbed();
 		embed.setTitle("変態が画像で");
-		embed.description("18禁區🔞\n點擊下方按鈕來\"進入\"");
+		embed.setDescription("18禁區🔞\n點擊下方按鈕來\"進入\"");
 		msg.channel.send(embed) ;
 		msg.delete(0);
 	  }

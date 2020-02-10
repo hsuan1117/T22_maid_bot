@@ -193,9 +193,12 @@ client.on('message', msg => {
 		if(user.bot)
 			return ;
 		var rolename = reaction.emoji.name ;
-		var role = reaction.message.guild.roles.find(role=>role.name.toLowerCase()===rolename.toLowerCase()) ;
+		console.log(rolename) ;
+		/*if(rolename===""){
+
+		}
 		var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
-		member.addRole(role.id).catch(err=>console.error) ;
+		member.addRole(role.id).catch(err=>console.error) ;*/
 	}) 
 
 

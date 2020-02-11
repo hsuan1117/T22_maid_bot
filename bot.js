@@ -193,50 +193,32 @@ client.on('message', msg => {
 			return ;
 		var rolename = reaction.emoji.name ;
 		if(rolename==="🔞"){
-			if(member.roles.has("676117026271395846")){
-				member.removeRole("676117026271395846").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else{
+			
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("676117026271395846").catch(err=>console.error) ;
 				reaction.remove(member) ;
-			}
 		}
 		if(rolename==="0️⃣"){
-			if(member.roles.has("672471249653465121")){
-				member.removeRole("672471249653465121").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else{
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("672471249653465121").catch(err=>console.error) ;
 				reaction.remove(member) ;
-			}
+
 		}
 		if(rolename==="1️⃣"){
-			if(member.roles.has("661229449450356746")){
-				member.removeRole("661229449450356746").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else{
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661229449450356746").catch(err=>console.error) ;
 				reaction.remove(member) ;
-			}
+			
 		}
 		if(rolename==="2️⃣"){
-			if(member.roles.has("661204081830002694")){
-				member.removeRole("661204081830002694").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else{
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661204081830002694").catch(err=>console.error) ;
 				reaction.remove(member) ;
-			}
 		}
-		
+		if(member.roles.has("676117026271395846")){
+			member.removeRole("676117026271395846").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
 	}) 
 
 

@@ -114,6 +114,19 @@ client.on('message', msg => {
 				  return ;
 			}
 		}
+		if(msg.embeds&&msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")){
+			const embedMsg = msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")
+			if(embedMsg){
+				  embedMsg.message.react(":regional_indicator_t:")
+				  .then(reaction=>reaction.message.react("2️⃣"))
+				  .then(reaction=>reaction.message.react("➖"))
+				  .then(reaction=>reaction.message.react("0️⃣"))
+				  .then(reaction=>reaction.message.react("1️⃣"))
+				  .then(reaction=>reaction.message.react("2️⃣"))
+				  .catch(err=>console.error);
+				  return ;
+			}
+		}
 	}
 	  
 //limit time message

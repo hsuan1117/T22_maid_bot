@@ -180,46 +180,46 @@ client.on('message', msg => {
 /*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 });
 
-//beHentai
+//roleadd
 	client.on('messageReactionAdd',(reaction,user)=>{
 		if(user.bot)
 			return ;
 		var rolename = reaction.emoji.name ;
-		if(rolename==="🔞"){
+		if(member.roles.has("676117026271395846")==1){ //hentai
+			member.removeRole("676117026271395846").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("672471249653465121")==1){ //t20
+			member.removeRole("672471249653465121").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("661229449450356746")==1){ //t21
+			member.removeRole("661229449450356746").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("661204081830002694")==1){ //t22
+			member.removeRole("661204081830002694").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		else{
+			if(rolename==="🔞"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("676117026271395846").catch(err=>console.error) ;
 				reaction.remove(member) ;
-		}
-		if(rolename==="0️⃣"){
+			}
+			if(rolename==="0️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("672471249653465121").catch(err=>console.error) ;
 				reaction.remove(member) ;
-		}
-		if(rolename==="1️⃣"){
+			}
+			if(rolename==="1️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661229449450356746").catch(err=>console.error) ;
 				reaction.remove(member) ;
-		}
-		if(rolename==="2️⃣"){
+			}
+			if(rolename==="2️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661204081830002694").catch(err=>console.error) ;
-				reaction.remove(member) ;
-		}
-		else{
-			if(member.roles.has("676117026271395846")==1){ //hentai
-				member.removeRole("676117026271395846").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			if(member.roles.has("672471249653465121")==1){ //t20
-				member.removeRole("672471249653465121").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			if(member.roles.has("661229449450356746")==1){ //t21
-				member.removeRole("661229449450356746").catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			if(member.roles.has("661204081830002694")==1){ //t22
-				member.removeRole("661204081830002694").catch(err=>console.error);
 				reaction.remove(member) ;
 			}
 		}

@@ -91,22 +91,23 @@ client.on('message', msg => {
 	  embed.setDescription("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
 	  msg.channel.send(embed) ;
 	  msg.delete(0); 
-	  if(msg.author.bot){
-		if(msg.embeds){
-			const embedMsg = msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")
-			if(embedMsg){
-				  embedMsg.message.react(":regional_indicator_t:")
-				  .then(reaction => reaction.message.react("2️⃣"))
-				  .then(reaction => reaction.message.react("➖"))
-				  .then(reaction => reaction.message.react("0️⃣"))
-				  .then(reaction => reaction.message.react("1️⃣"))
-				  .then(reaction => reaction.message.react("2️⃣"))
-				  .catch(err=>console.error);
-			}
-			return ;
-		}
-	}      
+	    
   }
+  if(msg.author.bot){
+	if(msg.embeds){
+		const embedMsg = msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")
+		if(embedMsg){
+			  embedMsg.message.react(":regional_indicator_t:")
+			  .then(reaction => reaction.message.react("2️⃣"))
+			  .then(reaction => reaction.message.react("➖"))
+			  .then(reaction => reaction.message.react("0️⃣"))
+			  .then(reaction => reaction.message.react("1️⃣"))
+			  .then(reaction => reaction.message.react("2️⃣"))
+			  .catch(err=>console.error);
+		}
+		return ;
+	}
+}    
 
 //beHentaiMsg
 	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
@@ -116,16 +117,17 @@ client.on('message', msg => {
 		embed.setDescription("18禁區 🔞\n點擊下方按鈕來\"進入\"\n再點一次來取消訂閱！");
 		msg.channel.send(embed) ;
 		msg.delete(0);
-		if(msg.author.bot){
-			if(msg.embeds){
-				const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
-				if(embedMsg){
-					  embedMsg.message.react("🔞");
-					  return ;
-				}
+		
+	  }
+	  if(msg.author.bot){
+		if(msg.embeds){
+			const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
+			if(embedMsg){
+				  embedMsg.message.react("🔞");
+				  return ;
 			}
 		}
-	  }
+	}
 	  
 //limit time message
   if(msg.content.startsWith(prefix+"limited")){

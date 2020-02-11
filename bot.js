@@ -188,22 +188,18 @@ client.on('message', msg => {
 		if(rolename==="🔞"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("676117026271395846").catch(err=>console.error) ;
-				reaction.remove(member) ;
 		}
 		if(rolename==="0️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("672471249653465121").catch(err=>console.error) ;
-				reaction.remove(member) ;
 		}
 		if(rolename==="1️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661229449450356746").catch(err=>console.error) ;
-				reaction.remove(member) ;
 		}
 		if(rolename==="2️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661204081830002694").catch(err=>console.error) ;
-				reaction.remove(member) ;
 		}
 		if(member.roles.has("676117026271395846")){ //hentai
 			member.removeRole("676117026271395846").catch(err=>console.error);

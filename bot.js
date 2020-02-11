@@ -206,19 +206,19 @@ client.on('message', msg => {
 				reaction.remove(member) ;
 		}
 		else{
-			if(member.roles.has("676117026271395846")){ //hentai
+			if(member.roles.has("676117026271395846")==1){ //hentai
 				member.removeRole("676117026271395846").catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has("672471249653465121")){ //t20
+			if(member.roles.has("672471249653465121")==1){ //t20
 				member.removeRole("672471249653465121").catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has("661229449450356746")){ //t21
+			if(member.roles.has("661229449450356746")==1){ //t21
 				member.removeRole("661229449450356746").catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has("661204081830002694")){ //t22
+			if(member.roles.has("661204081830002694")==1){ //t22
 				member.removeRole("661204081830002694").catch(err=>console.error);
 				reaction.remove(member) ;
 			}

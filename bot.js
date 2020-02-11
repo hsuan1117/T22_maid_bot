@@ -91,7 +91,6 @@ client.on('message', msg => {
 	  embed.setDescription("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
 	  msg.channel.send(embed) ;
 	  msg.delete(0); 
-	    
   }
       
 
@@ -105,8 +104,10 @@ client.on('message', msg => {
 		msg.delete(0);
 		
 	  }
+	  
+	 
 	  if(msg.author.bot){
-		if(msg.embeds){
+		if(msg.embeds&&msg.embeds.find(msg => msg.title === "変態に画像で")){
 			const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
 			if(embedMsg){
 				  embedMsg.message.react("🔞");
@@ -215,8 +216,20 @@ client.on('message', msg => {
 				member.addRole("661204081830002694").catch(err=>console.error) ;
 				reaction.remove(member) ;
 		}
-		if(member.roles.has("676117026271395846")){
+		if(member.roles.has("676117026271395846")){ //hentai
 			member.removeRole("676117026271395846").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("672471249653465121")){ //t20
+			member.removeRole("672471249653465121").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("661229449450356746")){ //t21
+			member.removeRole("661229449450356746").catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		if(member.roles.has("661204081830002694")){ //t22
+			member.removeRole("661204081830002694").catch(err=>console.error);
 			reaction.remove(member) ;
 		}
 	}) 

@@ -82,6 +82,32 @@ client.on('message', msg => {
 		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
 	}
   }
+
+//new adduser : cmd : /addUserMsg
+  if(msg.content.startsWith(prefix+"addUserMsg")){
+	  const embed = new RichEmbed() ;
+	  embed.setTitle("選擇你的身分組(屆數)！！") ;
+	  embed.setColor(2071184) ;
+	  embed.description("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
+	  msg.channel.send(embed) ;
+	  msg.delete(0); 
+	  if(msg.author.bot){
+		if(msg.embeds){
+			const embedMsg = msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")
+			if(embedMsg){
+				  embedMsg.message.react(":regional_indicator_t:")
+				  .then(reaction => reaction.message.react("2️⃣"))
+				  .then(reaction => reaction.message.react("➖"))
+				  .then(reaction => reaction.message.react("0️⃣"))
+				  .then(reaction => reaction.message.react("1️⃣"))
+				  .then(reaction => reaction.message.react("2️⃣"))
+				  .catch(err=>console.error);
+			}
+			return ;
+		}
+	}      
+  }
+
 //beHentaiMsg
 	  if(msg.content.startsWith(prefix+"beHentaiMsg")){
 		const embed = new RichEmbed();
@@ -90,32 +116,17 @@ client.on('message', msg => {
 		embed.setDescription("18禁區 🔞\n點擊下方按鈕來\"進入\"\n再點一次來取消訂閱！");
 		msg.channel.send(embed) ;
 		msg.delete(0);
+		if(msg.author.bot){
+			if(msg.embeds){
+				const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
+				if(embedMsg){
+					  embedMsg.message.react("🔞");
+					  return ;
+				}
+			}
+		}
 	  }
-	  if(msg.author.bot){
-		  if(msg.embeds){
-			  const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
-			  if(embedMsg){
-					embedMsg.message.react("🔞");
-			  }
-		  }
-	  }
-
-
-/*if(msg.content.startsWith(prefix+"beHentai")){
-	mention=msg.mentions.users.first() ;
-	addperson = msg.member ;
-	if(mention != null){addperson=msg.guild.member(mention) ;}
-	if(msg.channel.id==="676117834581147700"){
-		addUser(addperson,"hentai") ;
-	}
-	else{
-		msg.react('⚠️');
-		msg.delete(3000) ;
-		msg.reply("好像錯頻囉OWO").then(d_msg => d_msg.delete(3000)) ;
-	}
-
-  }*/
-  
+	  
 //limit time message
   if(msg.content.startsWith(prefix+"limited")){
 		msgsplit = msg.content.split(" ",2) ;
@@ -194,13 +205,48 @@ client.on('message', msg => {
 			return ;
 		var rolename = reaction.emoji.name ;
 		if(rolename==="🔞"){
-			var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
-			member.addRole("676117026271395846").catch(err=>console.error) ;
-			reaction.remove(member) ;
+			if(member.roles.has("676117026271395846")){
+				member.removeRole("676117026271395846").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
+				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+				member.addRole("676117026271395846").catch(err=>console.error) ;
+				reaction.remove(member) ;
+			}
 		}
-		if(member.roles.has("676117026271395846")){
-			member.removeRole("676117026271395846").catch(err=>console.error);
-			reaction.remove(member) ;
+		if(rolename==="0️⃣"){
+			if(member.roles.has("672471249653465121")){
+				member.removeRole("672471249653465121").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
+				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+				member.addRole("672471249653465121").catch(err=>console.error) ;
+				reaction.remove(member) ;
+			}
+		}
+		if(rolename==="1️⃣"){
+			if(member.roles.has("661229449450356746")){
+				member.removeRole("661229449450356746").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
+				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+				member.addRole("661229449450356746").catch(err=>console.error) ;
+				reaction.remove(member) ;
+			}
+		}
+		if(rolename==="2️⃣"){
+			if(member.roles.has("661204081830002694")){
+				member.removeRole("661204081830002694").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
+				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
+				member.addRole("661204081830002694").catch(err=>console.error) ;
+				reaction.remove(member) ;
+			}
 		}
 		
 	}) 

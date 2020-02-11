@@ -188,36 +188,43 @@ client.on('message', msg => {
 		var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 		var rolename = reaction.emoji.name ;
 
-		if(member.roles.has("676117026271395846")){ //hentai
-			member.removeRole("676117026271395846").catch(err=>console.error);
-			reaction.remove(member) ;
-		}
-		else if(member.roles.has("672471249653465121")){ //t20
-			member.removeRole("672471249653465121").catch(err=>console.error);
-			reaction.remove(member) ;
-		}
-		else if(member.roles.has("661229449450356746")){ //t21
-			member.removeRole("661229449450356746").catch(err=>console.error);
-			reaction.remove(member) ;
-		}
-		else if(member.roles.has("661204081830002694")){ //t22
-			member.removeRole("661204081830002694").catch(err=>console.error);
-			reaction.remove(member) ;
-		}
-		else{
-			if(rolename==="🔞"){
+		if(rolename==="🔞"){
+			if(member.roles.has("676117026271395846")){ //hentai
+				member.removeRole("676117026271395846").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
 				member.addRole("676117026271395846").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			else if(rolename==="0️⃣"){
+		}
+		else if(rolename==="0️⃣"){
+			if(member.roles.has("672471249653465121")){ //t20
+				member.removeRole("672471249653465121").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
 				member.addRole("672471249653465121").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			else if(rolename==="1️⃣"){
+			
+		}
+		else if(rolename==="1️⃣"){
+			if(member.roles.has("661229449450356746")){ //t21
+				member.removeRole("661229449450356746").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
 				member.addRole("661229449450356746").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			else if(rolename==="2️⃣"){
+		}
+		else if(rolename==="2️⃣"){
+			if(member.roles.has("661204081830002694")){ //t22
+				member.removeRole("661204081830002694").catch(err=>console.error);
+				reaction.remove(member) ;
+			}
+			else{
 				member.addRole("661204081830002694").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}

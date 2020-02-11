@@ -88,7 +88,7 @@ client.on('message', msg => {
 	  const embed = new RichEmbed() ;
 	  embed.setTitle("選擇你的身分組(屆數)！！") ;
 	  embed.setColor(2071184) ;
-	  embed.setDescription("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
+	  embed.setDescription("哈囉！我是身分組(屆數)選擇機\n如果你是\nT20的－請按 0️⃣\nT21的－請按 1️⃣\nT22的－請按 2️⃣\n變態的－請按 🔞") ;    
 	  msg.channel.send(embed) ;
 	  msg.delete(0); 
   }
@@ -107,27 +107,19 @@ client.on('message', msg => {
 	  
 	 
 	  if(msg.author.bot){
-		if(msg.embeds&&msg.embeds.find(msg => msg.title === "変態に画像で")){
-			const embedMsg = msg.embeds.find(msg => msg.title === "変態に画像で")
-			if(embedMsg){
-				  embedMsg.message.react("🔞");
-				  return ;
-			}
-		}
-		if(msg.embeds&&msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")){
+		if(msg.embeds){
 			const embedMsg = msg.embeds.find(msg => msg.title === "選擇你的身分組(屆數)！！")
 			if(embedMsg){
-				  embedMsg.message.react(":regional_indicator_t:")
-				  .then(reaction=>reaction.message.react("2️⃣"))
-				  .then(reaction=>reaction.message.react("➖"))
-				  .then(reaction=>reaction.message.react("0️⃣"))
+				  embedMsg.message.react("0️⃣")
 				  .then(reaction=>reaction.message.react("1️⃣"))
 				  .then(reaction=>reaction.message.react("2️⃣"))
+				  .then(reaction=>reaction.message.react("🔞"))
 				  .catch(err=>console.error);
 				  return ;
 			}
 		}
 	}
+		
 	  
 //limit time message
   if(msg.content.startsWith(prefix+"limited")){
@@ -207,7 +199,6 @@ client.on('message', msg => {
 			return ;
 		var rolename = reaction.emoji.name ;
 		if(rolename==="🔞"){
-			
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("676117026271395846").catch(err=>console.error) ;
 				reaction.remove(member) ;
@@ -216,13 +207,11 @@ client.on('message', msg => {
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("672471249653465121").catch(err=>console.error) ;
 				reaction.remove(member) ;
-
 		}
 		if(rolename==="1️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;
 				member.addRole("661229449450356746").catch(err=>console.error) ;
 				reaction.remove(member) ;
-			
 		}
 		if(rolename==="2️⃣"){
 				var member = reaction.message.guild.members.find(member=>member.id===user.id) ;

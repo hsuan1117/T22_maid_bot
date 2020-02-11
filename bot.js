@@ -88,7 +88,7 @@ client.on('message', msg => {
 	  const embed = new RichEmbed() ;
 	  embed.setTitle("選擇你的身分組(屆數)！！") ;
 	  embed.setColor(2071184) ;
-	  embed.description("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
+	  embed.setDescription("哈囉！我是身分組(屆數)選擇機\n如果你是T20的－請按 0️⃣\n        T21的－請按 1️⃣\n        T22的－請按 2️⃣") ;    
 	  msg.channel.send(embed) ;
 	  msg.delete(0); 
 	  if(msg.author.bot){

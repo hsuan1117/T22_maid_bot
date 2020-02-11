@@ -191,23 +191,21 @@ client.on('message', msg => {
 		var roleT20 = reaction.message.guild.roles.find(role=> role.name === "T20") ;
 		var roleT21 = reaction.message.guild.roles.find(role=> role.name === "T21") ;
 		var roleT22 = reaction.message.guild.roles.find(role=> role.name === "T22") ;
-		if(member.roles.has(rolehentai.id)||member.roles.has(roleT20.id)||member.roles.has(roleT21.id)||member.roles.has(roleT22.id)){
-			if(member.roles.has(rolehentai.id)===1){ //hentai
-				member.removeRole(rolehentai.id).catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else if(member.roles.has(roleT20.id)===1){ //t20
-				member.removeRole(roleT20.id).catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else if(member.roles.has(roleT21.id)===1){ //t21
-				member.removeRole(roleT21.id).catch(err=>console.error);
-				reaction.remove(member) ;
-			}
-			else if(member.roles.has(roleT22.id)===1){ //t22
-				member.removeRole(roleT22.id).catch(err=>console.error);
-				reaction.remove(member) ;
-			}
+		if(member.roles.has(rolehentai.id)===1){ //hentai
+			member.removeRole(rolehentai.id).catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		else if(member.roles.has(roleT20.id)===1){ //t20
+			member.removeRole(roleT20.id).catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		else if(member.roles.has(roleT21.id)===1){ //t21
+			member.removeRole(roleT21.id).catch(err=>console.error);
+			reaction.remove(member) ;
+		}
+		else if(member.roles.has(roleT22.id)===1){ //t22
+			member.removeRole(roleT22.id).catch(err=>console.error);
+			reaction.remove(member) ;
 		}
 		else{
 			if(rolename==="🔞"){

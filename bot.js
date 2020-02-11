@@ -4,7 +4,7 @@
 //setup
 	const {Client, RichEmbed}=require('discord.js');
 	const Discord = require('discord.js');
-	var client = new Discord.Client();
+	var client = new Client ;
 	const auth = require('./auth.json');
 
 //prefix
@@ -192,19 +192,19 @@ client.on('message', msg => {
 		var roleT21 = reaction.message.guild.roles.find(role=> role.name === "T21") ;
 		var roleT22 = reaction.message.guild.roles.find(role=> role.name === "T22") ;
 		if(member.roles.has(rolehentai.id)||member.roles.has(roleT20.id)||member.roles.has(roleT21.id)||member.roles.has(roleT22.id)){
-			if(member.roles.has(rolehentai.id)){ //hentai
+			if(member.roles.has(rolehentai.id)===1){ //hentai
 				member.removeRole(rolehentai.id).catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has(roleT20.id)){ //t20
+			else if(member.roles.has(roleT20.id)===1){ //t20
 				member.removeRole(roleT20.id).catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has(roleT21.id)){ //t21
+			else if(member.roles.has(roleT21.id)===1){ //t21
 				member.removeRole(roleT21.id).catch(err=>console.error);
 				reaction.remove(member) ;
 			}
-			if(member.roles.has(roleT22.id)){ //t22
+			else if(member.roles.has(roleT22.id)===1){ //t22
 				member.removeRole(roleT22.id).catch(err=>console.error);
 				reaction.remove(member) ;
 			}
@@ -214,15 +214,15 @@ client.on('message', msg => {
 				member.addRole("676117026271395846").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			if(rolename==="0️⃣"){
+			else if(rolename==="0️⃣"){
 				member.addRole("672471249653465121").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			if(rolename==="1️⃣"){
+			else if(rolename==="1️⃣"){
 				member.addRole("661229449450356746").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
-			if(rolename==="2️⃣"){
+			else if(rolename==="2️⃣"){
 				member.addRole("661204081830002694").catch(err=>console.error) ;
 				reaction.remove(member) ;
 			}
